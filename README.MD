@@ -33,4 +33,11 @@ The following vulnerabilities are present in Curzor:
 * Identification and Authentication Failure;
 * Broken Access Control.
 
-The vulnerabilities in the application have been encountered in the wild in the same or similar form before. 
+The vulnerabilities in the application have been encountered in the wild before (in the same or similar form).
+
+## TODO
+* Implement mechanism that allows dynamic configuration of the web application.
+
+# Notes
+* The application and part of the range are currently utilized in the Active Information Security course in Sofia University, Bulgaria.
+
