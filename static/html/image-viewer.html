@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Image Viewer</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/files">Files</a></li>
+        <li><a href="/upload">Upload</a></li>
+        <li><a href="/watcher">Watcher</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="/image-viewer">Image Viewer</a></li>
+    </ul>
+
+    <label>Enter image URL and it will be displayed:</label>
+    <form enctype="multipart/x-www-from-urlencoded" action="/get-image" method="post">
+        <input type="text" name="imageURL" />
+        <input type="submit" value="Get Image" />
+    </form>
+</body>
+
+</html>

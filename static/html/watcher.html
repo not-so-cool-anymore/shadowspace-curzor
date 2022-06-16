@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Watcher</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/files">Files</a></li>
+        <li><a href="/upload">Upload</a></li>
+        <li><a href="/watcher">Watcher</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="/image-viewer">Image Viewer</a></li>
+    </ul>
+
+    <div>
+        <form enctype="multipart/x-www-from-urlencoded" action="/ping" method="post">
+            <a>Enter IP to ping: </a>
+            <input type="text" name="ip" />
+            <input type="submit" value="Ping" />
+        </form>
+    </div>
+
+    <div>
+        <a>What do you think about our Watcher? Write an anon comment:</a>
+        <form enctype="multipart/x-www-from-urlencoded" action="/comment" method="post">
+            <input type="text" name="comment" />
+            <input type="submit" value="Comment" />
+        </form>
+    </div>
+
+    <div>
+        <a>Comments:</a>
+        <div class="comments">
+            {{ range . }}
+            <li class="comment" value="{{.}}">{{.}}</li>
+            <br>
+            {{ end }}
+        </div>
+
+    </div>
+</body>
+
+</html>

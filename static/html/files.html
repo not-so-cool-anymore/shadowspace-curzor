@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Files</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/files">Files</a></li>
+        <li><a href="/upload">Upload</a></li>
+        <li><a href="/watcher">Watcher</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="/image-viewer">Image Viewer</a></li>
+    </ul>
+
+    <div style="padding-top: 20px">
+        {{ range $file := . }}
+        <li class="{{ $file.Name }}">{{ $file.Name }}</li>
+        </br>
+        <li class="file">{{ $file.Size }}</li>
+        {{ end }}
+
+    </div>
+</body>
+
+</html>
