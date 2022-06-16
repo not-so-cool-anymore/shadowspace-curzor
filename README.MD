@@ -17,7 +17,10 @@ or
 The server runs on port `8080`.
 
 ### Docker
-* Execute `docker build .`
+* Execute `docker build . -t shadowspace/curzor` in order to build the container;
+* Run the container in daemon mode with `sudo docker run -p 80:8080 shadowspace/curzor`.
+
+Docker will bind the container's port `8080` to the host's port `80` on `0.0.0.0`.
 
 ## Vulnerabilities
 The following vulnerabilities are present in Curzor:
