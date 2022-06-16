@@ -21,17 +21,11 @@ func configure() *http.Server {
 	flag.StringVar(&staticFilesDir, "staticFilesDir", "static/", "Directory to serve static files from. Defaults to the current dir.")
 	flag.Parse()
 
-	// flag.StringVar(&uploadedFilesDir, "uploadedFilesDir", "uploaded_files/", "Directory to serve the uploaded files to the service.")
-	// flag.Parse()
-
 	router := mux.NewRouter()
 	router.Use(middlewares.HeadersMiddleware)
 
 	// serve static files on :host:/static/<file>
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(staticFilesDir)))).Methods("GET", "HEAD")
-
-	// serve static files on :host:/uploaded_files/<file>
-	// router.PathPrefix("/uploaded_files/").Handler(http.StripPrefix("/uploaded_files/", http.FileServer(http.Dir(uploadedFilesDir)))).Methods("GET", "HEAD")
 
 	// serve static content
 	router.HandleFunc("/", handlers.ServeIndexPage).Methods("GET")
@@ -51,7 +45,7 @@ func configure() *http.Server {
 
 	server := &http.Server{
 		Handler:      router,
-		Addr:         "localhost:8080",
+		Addr:         "0.0.0.0:8080",
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}

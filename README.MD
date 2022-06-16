@@ -9,10 +9,15 @@ You need the following dependencies in order to run the application:
 ### On-system 
 * Run `go build .` inside the directory of the project.
 * Execute the application with `./curzor`.
+
 or
+
 * Directly run the application with `go run .` inside the directory of the project.
 
+The server runs on port `8080`.
+
 ### Docker
+* Execute `docker build .`
 
 ## Vulnerabilities
 The following vulnerabilities are present in Curzor:
@@ -23,6 +28,6 @@ The following vulnerabilities are present in Curzor:
 * Use of Hardcoded Credentials;
 * Unrestricted File Upload;
 * Identification and Authentication Failure;
-* Broken Access Control;
+* Broken Access Control.
 
 The vulnerabilities in the application have been encountered in the wild in the same or similar form before. 
